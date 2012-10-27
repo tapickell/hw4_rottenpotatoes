@@ -16,6 +16,9 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'rb-fsevent', :require => false
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
 end
 group :production do
   gem 'pg'
