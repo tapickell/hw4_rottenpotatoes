@@ -17,6 +17,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'rb-fsevent', :require => false
+  gem 'rb-inotify', '~> 0.8.8'
   gem 'guard-rspec'
   gem 'guard-cucumber'
 end
