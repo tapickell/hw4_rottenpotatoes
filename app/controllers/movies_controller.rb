@@ -69,7 +69,7 @@ class MoviesController < ApplicationController
     id = params[:id]
     @movie = Movie.find(id)
     begin
-      @movies = Movie.find_same_dricetor(id)
+      @movies = Movie.find_same_director(id)
     rescue Movie::NoDirectorInfo => exception
       flash[:warning] = "'#{@movie.title}' has no director info."
       redirect_to movies_path
