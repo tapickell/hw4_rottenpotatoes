@@ -5,7 +5,7 @@ class Movie < ActiveRecord::Base
 
   class Movie::NoDirectorInfo < StandardError; end
 
-  def self.find_smae_director(id)
+  def self.find_same_director(id)
     movie = self.find(id)
     director = movie.respond_to?('director') ? movie.director : ''
     if director and !director.empty?

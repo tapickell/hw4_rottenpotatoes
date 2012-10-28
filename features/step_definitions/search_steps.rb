@@ -1,3 +1,4 @@
+# feeling extra dislexic!
 Given /^the following movies exist:$/ do |table|
   table.hashes.each do |movie|
     Movie.create(:title => movie['title'], :rating => movie['rating'], :director => movie['director'], :release_date => movie['release_date'])
