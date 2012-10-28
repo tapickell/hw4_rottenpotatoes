@@ -14,7 +14,7 @@ describe MoviesController do
   describe 'list all movies' do
 
     it 'should find and list all movies' do
-      fake_results = [mock('Movie'), mock('Movie)]
+      fake_results = [mock('Movie'), mock('Movie')]
       Movie.should_receive(:find_all_by_rating).and_return(fake_results)
       get :index
       response.should render_template('index')
