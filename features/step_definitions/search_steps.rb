@@ -7,8 +7,6 @@ Given /^the following movies exist:$/ do |table|
 end
 
 Then /^the director of "([^"]*)" should be "([^"]*)"$/ do |title, director|
-#  movie = Movie.find_by_title(title)
-#  movie.director.should == director
-  step %Q{I should see "#{title}"}	
-  step %Q{I should see "#{director}"}
+  movie = Movie.find_by_title(title)
+  movie.director.should == director
 end
