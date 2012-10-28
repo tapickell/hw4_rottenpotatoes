@@ -47,7 +47,7 @@ describe MoviesController do
   describe 'create a movie' do
     it 'should create a movie successfully' do
       movie = mock('Movie', :title => 'The Help')
-      Movie.should_receive(:create!)and_return(movie)
+      Movie.should_receive(:create!).and_return(movie)
       post :create, :movie => movie
       response.should redirect_to(movies_path)
     end
@@ -74,11 +74,11 @@ describe MoviesController do
 
   describe 'delete a movie' do
     it 'should delete the movie' do
-      movie = mock('Movie', :id => '1'. :title => 'The Help')
+      movie = mock('Movie', :id => '1', :title => 'The Help')
       Movie.should_receive(:find).with('1').and_return(movie)
       movie.should_receive(:destroy)
       delete :destroy, :id => '1'
-      response.should redirect_to(movie_path)
+      response.should redirect_to(movies_path)
     end
   end
 
