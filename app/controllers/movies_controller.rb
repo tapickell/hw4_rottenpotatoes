@@ -64,6 +64,7 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+# undefined method director
   def same_director
     id = params[:id]
     @movie = Movie.find(id)
