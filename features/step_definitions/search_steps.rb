@@ -1,8 +1,11 @@
 Given /^the following movies exist:$/ do |table|
   # table is a Cucumber::Ast::Table
-  pending # express the regex above with the code you wish you had
+  table.hashes.each do |movie|
+    Movie.create(:title => movie['title'], :rating => movie['rating'], :director => movie['director'], :release_date => movie['release_date'])
+  end
 end
 
-Then /^the director of "([^"]*)" should be "([^"]*)"$/ do |arg1, arg2|
-  pending #
+Then /^the director of "([^"]*)" should be "([^"]*)"$/ do |title, director|
+  movie = Movie.find_by_title(title)
+  movie.director.should == director
 end
